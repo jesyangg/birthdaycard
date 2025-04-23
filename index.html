@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        background-image: url('images/5MWjnN4.gif');
+        background-size: cover;
+    }
+
+    .flipbook {
+        width: 1000px;
+        height: 600px;
+    }
+
+    /* Reset default turn.js styles */
+    .flipbook .turn-page {
+        background-color: white;
+    }
+
+    /* Ensure all pages have consistent dimensions */
+    .flipbook .page,
+    .flipbook .hard {
+        width: 500px;
+        height: 600px;
+        background: white;
+        overflow: hidden;
+    }
+
+    /* Regular page styles */
+    .page-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Hard cover styles */
+    .flipbook .hard {
+        background: #c0392b !important;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+    }
+
+
+    .flipbook .hard small{
+        font-style: italic;
+        font-weight: lighter;
+        opacity: 0.7;
+        font-size: 16px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* Image styles */
+    .page-content img{
+        max-width: 70%;
+        max-height: 60%;
+        object-fit: contain;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    /* Text styles */
+    .page-content small{
+        font-size: 16px;
+        margin-bottom: 10px;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Cover image container */
+    .imagediv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .imagediv img {
+        max-height: 300px;
+        max-width: 80%;
+        object-fit: contain;
+    }
+
+    /* Video styles */
+    .page-content video {
+        max-width: 80%;
+        max-height: 70%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Controls */
+    .controls {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .controls button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .controls button:hover {
+        background: #c0392b;
+    }
+
+    #restart-btn {
+        display: none;
+        margin-top: 10px;
+        padding: 8px 15px;
+        background-color: #ffcb05;
+        color: #3c5aa6;
+        border: 2px solid #3c5aa6;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    #restart-btn:hover {
+        background-color: #3c5aa6;
+        color: #ffcb05;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="controls">
+    <button id="prev-btn">&#8592; Previous</button>
+    <button id="next-btn">Next &#8594;</button>
+    <div>
+      <button id="restart-btn">Start Over</button>
+    </div>
+  </div>
+      
+  <div class="flipbook">
+    <div class="hard">
+      <div class="page-content">
+        <div id="frontpage">Happy Birthday Maomao</div>
+        <div class="imagediv">
+          <img src="images/Birthday_Cake_PNG_Clip_Art_Image-876450906.png" alt="Birthday Cover" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="hard">
+      <div class="page-content"></div>
+    </div>
+    
+    <div class="page">
+      <div class="page-content">
+        <small>Hiii sister happy birthday!!</small>
+        <small>I love youu you're da besttt</small>
+      </div>
+    </div>
+    
+    <div class="page">
+      <div class="page-content">
+        <img src="images/IMG_0074_Original.jpg" alt="" />
+        <small>Thank you for always being a great big sister to mee</small>
+      </div>
+    </div>
+    
+    <div class="page">
+      <div class="page-content">
+        <img src="images/IMG_9753.PNG" alt="" />
+        <small>You're always so supportive and a kind person</small>
+      </div>
+    </div>
+    
+    <div class="page">
+      <div class="page-content">
+        <img src="images/IMG_1750_Original.jpg" alt="" />
+        <small>And you always teach me so many things about the world</small>
+        <small>and buy me nice things that nobody else buys me lol</small>
+      </div>
+    </div>
+    
+    <div class="page">
+      <div class="page-content">
+        <img src="images/IMG_1757_Original.jpg" alt="" />
+        <small>I appreciate everything you do for me and mommyy</small>
+        <small>like help us whenever we need advice cause we both don't know what to dooo</small>
+      </div>
+    </div>
+
+    <div class="page">
+        <div class="page-content">
+          <img src="images/IMG_9757.PNG" alt="" />
+          <small>I hope you are really happy and enjoying your lifee</small>
+        </div>
+      </div>
+    
+    <div class="page">
+      <div class="page-content">
+        <img src="images/IMG_9755.PNG" alt="" />
+        <small>You're so hardworkingg and strongg</small>
+      </div>
+    </div>
+
+    <div class="page">
+        <div class="page-content">
+          <img src="images/IMG_9754.PNG" alt="" />
+          <small>i feel sad that we don’t see each other that much anymore</small>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+          <img src="images/IMG_5494_Original.jpg" alt="" />
+          <small>but it’s okay because I know we will always be sisters hehe</small>
+        </div>
+      </div>
+
+
+      <div class="page">
+        <div class="page-content">
+          <img src="images/IMG_5472_Original.PNG" alt="" />
+          <small>I hope you have a good birthdayy!</small>
+        </div>
+      </div>
+
+
+      <div class="page">
+        <div class="page-content">
+          <img src="images/IMG_2131_Original.jpg" alt="" />
+          <small>You’re the best sister I could ever ask forr</small>
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-content">
+            <iframe width="460" height="215" src="https://www.youtube.com/embed/Qwscr_tOzW4?si=VfvJzp0Qotm462EQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <small>Omgg look at this old video that I found</small>
+            <small>Why are you so weirdd</small>
+        </div>
+      </div>
+    
+    <div class="hard">
+      <div class="page-content"></div>
+    </div>
+    
+    <div class="hard">
+      <div class="page-content">
+        Have a good birthday Maomao <small>Love youu</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Initialize turn.js with fixed dimensions
+      $(".flipbook").turn({
+        width: 1000,
+        height: 600,
+        autoCenter: true,
+        duration: 1000,
+        gradients: true,
+        acceleration: true,
+        elevation: 50,
+        when: {
+          turning: function(e, page, view) {
+            // Make sure all pages have consistent dimensions
+            $(".flipbook .page, .flipbook .hard").css({
+              width: "500px",
+              height: "600px"
+            });
+          }
+        }
+      });
+      
+      // Calculate total pages
+      var totalPages = $(".flipbook").turn("pages");
+      
+      // Button navigation
+      $("#prev-btn").click(function() {
+        $(".flipbook").turn("previous");
+        updateRestartButton();
+      });
+      
+      $("#next-btn").click(function() {
+        $(".flipbook").turn("next");
+        updateRestartButton();
+      });
+      
+      // Restart button
+      $("#restart-btn").click(function() {
+        $(".flipbook").turn("page", 1);
+        $(this).hide();
+      });
+      
+      // Keyboard navigation
+      $(document).keydown(function(e) {
+        switch(e.which) {
+          case 37: // left arrow key
+            $(".flipbook").turn("previous");
+            updateRestartButton();
+            e.preventDefault();
+            break;
+          case 39: // right arrow key
+            $(".flipbook").turn("next");
+            updateRestartButton();
+            e.preventDefault();
+            break;
+        }
+      });
+      
+      // Function to update restart button visibility
+      function updateRestartButton() {
+        // Small timeout to ensure the page number is updated
+        setTimeout(function() {
+          var currentPage = $(".flipbook").turn("page");
+          if (currentPage == totalPages) {
+            $("#restart-btn").show();
+          } else {
+            $("#restart-btn").hide();
+          }
+        }, 50); // Very short timeout just to ensure page update is registered
+      }
+      
+      // Initial check for the button
+      updateRestartButton();
+      
+      // Also handle the turned event as backup
+      $(".flipbook").bind("turned", function(event, page, view) {
+        updateRestartButton();
+      });
+      
+      // Handle start event to hide button during turning
+      $(".flipbook").bind("start", function(event, pageObject, corner) {
+        if (pageObject.next == 1) {
+          $("#restart-btn").hide();
+        }
+      });
+      
+      // Force all pages to have the same dimensions after initialization
+      setTimeout(function() {
+        $(".flipbook .page, .flipbook .hard").css({
+          width: "500px",
+          height: "600px"
+        });
+      }, 100);
+    });
+  </script>
+</body>
+</html>
