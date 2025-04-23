@@ -14,8 +14,10 @@
     }
 
     body {
-        display: grid;
-        place-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
         width: 100vw;
         overflow: hidden;
@@ -26,6 +28,7 @@
     .flipbook {
         width: 1000px;
         height: 600px;
+        margin-bottom: 20px;
     }
 
     /* Reset default turn.js styles */
@@ -37,7 +40,7 @@
     .flipbook .page,
     .flipbook .hard {
         width: 500px;
-        height: 600px;
+        height: 600px !important;
         background: white;
         overflow: hidden;
     }
@@ -113,10 +116,9 @@
         display: block;
     }
 
-    /* Controls */
+    /* Controls - Moved below the flipbook */
     .controls {
         margin-top: 20px;
-        margin-bottom: 15px;
         display: flex;
         justify-content: center;
         gap: 20px;
@@ -139,8 +141,7 @@
     }
 
     #restart-btn {
-        display: none;
-        margin-top: 10px;
+        margin-top: 0;
         padding: 8px 15px;
         background-color: #ffcb05;
         color: #3c5aa6;
@@ -155,18 +156,13 @@
         color: #ffcb05;
     }
     
+    #frontpage {
+        background-color: pink;
+    }
   </style>
 </head>
 
 <body>
-  <div class="controls">
-    <button id="prev-btn">&#8592; Previous</button>
-    <button id="next-btn">Next &#8594;</button>
-    <div>
-      <button id="restart-btn">Start Over</button>
-    </div>
-  </div>
-      
   <div class="flipbook">
     <div class="hard">
       <div class="page-content">
@@ -235,14 +231,14 @@
     <div class="page">
         <div class="page-content">
           <img src="images/IMG_9754.PNG" alt="" />
-          <small>i feel sad that we don’t see each other that much anymore</small>
+          <small>i feel sad that we don't see each other that much anymore</small>
         </div>
       </div>
 
       <div class="page">
         <div class="page-content">
           <img src="images/IMG_5494_Original.jpg" alt="" />
-          <small>but it’s okay because I know we will always be sisters hehe</small>
+          <small>but it's okay because I know we will always be sisters hehe</small>
         </div>
       </div>
 
@@ -258,7 +254,7 @@
       <div class="page">
         <div class="page-content">
           <img src="images/IMG_2131_Original.jpg" alt="" />
-          <small>You’re the best sister I could ever ask forr</small>
+          <small>You're the best sister I could ever ask forr</small>
         </div>
       </div>
 
@@ -279,6 +275,13 @@
         Have a good birthday Maomao <small>Love youu</small>
       </div>
     </div>
+  </div>
+  
+  <!-- Controls moved below the flipbook -->
+  <div class="controls">
+    <button id="prev-btn">&#8592; Previous</button>
+    <button id="next-btn">Next &#8594;</button>
+    <button id="restart-btn" style="display:none;">Start Over</button>
   </div>
 
   <script src="jquery.js"></script>
